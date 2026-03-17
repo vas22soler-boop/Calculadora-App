@@ -71,7 +71,7 @@ export default function App() {
     if (waitingForNewValue) {
     setDisplay("0.");
     setWaitingForNewValue(false);
-    } else if (display.indexOf(".") === .1){
+    } else if (display.indexOf(".") === -1){
       setDisplay(display + ".");
     }
   }
@@ -113,7 +113,7 @@ export default function App() {
         <TouchableOpacity style={styles.buttonNumber} onPress={ () => handNumblerPress(9)}> 
           <Text style={styles.buttonText}>9</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.operatorButton} onPress={handleOperatorPress ("x")}>
+        <TouchableOpacity style={styles.operatorButton} onPress={() => handleOperatorPress ("x")}>
           <Text style={styles.operatorText}>x</Text>
         </TouchableOpacity>
       </View>
@@ -129,7 +129,7 @@ export default function App() {
         <TouchableOpacity style={styles.buttonNumber} onPress={ () => handNumblerPress(6)}>
           <Text style={styles.buttonText}>6</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.operatorButton} onPress={handleOperatorPress ("-")}>
+        <TouchableOpacity style={styles.operatorButton} onPress={() => handleOperatorPress ("-")}>
           <Text style={styles.operatorText}>-</Text>
         </TouchableOpacity>
       </View>
@@ -145,7 +145,7 @@ export default function App() {
         <TouchableOpacity style={styles.buttonNumber} onPress={ () => handNumblerPress(3)}>
           <Text style={styles.buttonText}>3</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.operatorButton} onPress={handleOperatorPress("+")}>
+        <TouchableOpacity style={styles.operatorButton} onPress={() => handleOperatorPress("+")}>
           <Text style={styles.operatorText}>+</Text>
         </TouchableOpacity>
       </View>
